@@ -20,4 +20,12 @@ Photo.create!(url: "https://pbs.twimg.com/media/Clusm_JWYAEj2H-.jpg", username: 
 Photo.create!(url: "https://pbs.twimg.com/profile_images/720767103712645122/6XEBAXLj.jpg", username: "taylor", likes_count: 232)
 Photo.create!(url: "http://i.imgur.com/vrU6Kmu.jpg", username: "gamer", likes_count: 11)
 
+
+10.times do 
+  username = Faker::FamilyGuy.character
+  caption = Faker::FamilyGuy.quote
+  url = Faker::LoremPixel.image("500x500", false, "sports", nil, username)
+  Photo.create!(url: url, username: username, caption: caption, likes_count: Faker::Number.number(5))
+end
+
 puts "Seeded #{Photo.count} photos."
